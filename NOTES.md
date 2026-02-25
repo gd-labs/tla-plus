@@ -11,3 +11,13 @@ Whenever possible, it is better to use bounded than unbounded quantification in 
 A state is an assignment of values to variables and a behavior is an infinite sequence of states.
 
 A formula such as [`HC`](./src/HourClock/HourClock.tla) is a temporal formula, which is defined as an assertion about behaviors. A behavior satisfies `HC` iff `HC` is a true assertion about the behavior
+
+## Appendix
+
+_state function_: ordinary expression that can contain variables and constants.
+
+_state predicate_: Boolean-valued state function.
+
+_invariant_: state predicate such that `Spec => []Inv` is a theorem, for a given specification `Spec` and an invariant `Inv`.
+
+_type_: a variable `v` has type `T` in a specification `Spec` iff `v \in T` is an invariant of `Spec`.
