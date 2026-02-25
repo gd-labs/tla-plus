@@ -3,27 +3,34 @@ EXTENDS Naturals
 
 CONSTANT Data
 
-VARIABLE chan
+VARIABLES val,
+          rdy,
+          ack
 
-TypeInvariant == chan \in [val : Data, rdy : (0, 1), ack : (0, 1)]
-
------------------------------------------------------------------------
+TypeInvariant ==
+  /\ (val \in Data)
+  /\ (rdy \in (0 .. 1))
+  /\ (ack \in (0 .. 1))
 
 Init ==
-  /\ TypeInvariant
-  /\ chan.ack = chan.rdy
+  /\ val \in Data
+  /\ rdy \in (0 .. 1)
+  /\ ack = rdy
 
-Send(d) ==
-  /\ chan.rdy = chan.ack
-  /\ chan' = [chan EXCEPT !.val = d, !.rdy = 1 - @]
+Send ==
+  /\ rdy = ack
+  /\ val' \in Data
+  /\ rdy' = 1 - rdy
+  /\ UNCHANGED ack
 
 Recv ==
-  /\ chan.rdy # chan.ack
-  /\ chan' = [chan EXCEPT !.ack = 1 - @]
+  /\ rdy # ack
+  /\ ack' = 1 - ack
+  /\ UNCHANGED << val, rdy >>
 
-Next == (\E d \in Data : Send(d)) \/ Recv
+Next == Send \/ Recv
 
-Spec == Init /\ [][Next]_chan
+Spec == Init /\ [][Next]_<< val, rdy, ack >>
 
 -----------------------------------------------------------------------
 
