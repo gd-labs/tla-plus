@@ -30,6 +30,7 @@
             jdk
             tlaps
             gnumake
+            graphviz
           ];
 
           shellHook = ''

@@ -1,0 +1,53 @@
+strict digraph DiskGraph {
+nodesep=0.35;
+subgraph cluster_graph {
+color="white";
+7884844815865442736 [label="/\\ waitSet = {}\n/\\ buf = <<>>",style = filled]
+7884844815865442736 -> 5161059930158165280 [label="",color="black",fontcolor="black"];
+5161059930158165280 [label="/\\ waitSet = {}\n/\\ buf = <<p1>>"];
+7884844815865442736 -> -744434659070444972 [label="",color="black",fontcolor="black"];
+-744434659070444972 [label="/\\ waitSet = {c1}\n/\\ buf = <<>>"];
+7884844815865442736 -> 7755474553779047511 [label="",color="black",fontcolor="black"];
+7755474553779047511 [label="/\\ waitSet = {c2}\n/\\ buf = <<>>"];
+5161059930158165280 -> 3517885727436864007 [label="",color="black",fontcolor="black"];
+3517885727436864007 [label="/\\ waitSet = {p1}\n/\\ buf = <<p1>>"];
+5161059930158165280 -> 7884844815865442736 [label="",color="black",fontcolor="black"];
+5161059930158165280 -> 7884844815865442736 [label="",color="black",fontcolor="black"];
+-744434659070444972 -> 5161059930158165280 [label="",color="black",fontcolor="black"];
+-744434659070444972 -> 6941647630291152506 [label="",color="black",fontcolor="black"];
+6941647630291152506 [label="/\\ waitSet = {c1, c2}\n/\\ buf = <<>>"];
+7755474553779047511 -> 5161059930158165280 [label="",color="black",fontcolor="black"];
+7755474553779047511 -> 6941647630291152506 [label="",color="black",fontcolor="black"];
+3517885727436864007 -> 7884844815865442736 [label="",color="black",fontcolor="black"];
+3517885727436864007 -> 7884844815865442736 [label="",color="black",fontcolor="black"];
+6941647630291152506 -> -7353697264800056943 [label="",color="black",fontcolor="black"];
+-7353697264800056943 [label="/\\ waitSet = {c2}\n/\\ buf = <<p1>>"];
+6941647630291152506 -> -3647251740096735142 [label="",color="black",fontcolor="black"];
+-3647251740096735142 [label="/\\ waitSet = {c1}\n/\\ buf = <<p1>>"];
+-7353697264800056943 -> -3141117090933613572 [label="",color="black",fontcolor="black"];
+-3141117090933613572 [label="/\\ waitSet = {p1, c2}\n/\\ buf = <<p1>>"];
+-7353697264800056943 -> 7884844815865442736 [label="",color="black",fontcolor="black"];
+-3647251740096735142 -> -9153370303065146825 [label="",color="black",fontcolor="black"];
+-9153370303065146825 [label="/\\ waitSet = {p1, c1}\n/\\ buf = <<p1>>"];
+-3647251740096735142 -> 7884844815865442736 [label="",color="black",fontcolor="black"];
+-3141117090933613572 -> 7755474553779047511 [label="",color="black",fontcolor="black"];
+-3141117090933613572 -> 6827051445998667140 [label="",color="black",fontcolor="black"];
+6827051445998667140 [label="/\\ waitSet = {p1}\n/\\ buf = <<>>"];
+-9153370303065146825 -> -744434659070444972 [label="",color="black",fontcolor="black"];
+-9153370303065146825 -> 6827051445998667140 [label="",color="black",fontcolor="black"];
+6827051445998667140 -> 525529535153352640 [label="",color="black",fontcolor="black"];
+525529535153352640 [label="/\\ waitSet = {p1, c1}\n/\\ buf = <<>>"];
+6827051445998667140 -> -7403695922459993661 [label="",color="black",fontcolor="black"];
+-7403695922459993661 [label="/\\ waitSet = {p1, c2}\n/\\ buf = <<>>"];
+525529535153352640 -> -2709305724121163404 [label="",color="black",fontcolor="black"];
+-2709305724121163404 [label="/\\ waitSet = {p1, c1, c2}\n/\\ buf = <<>>"];
+-7403695922459993661 -> -2709305724121163404 [label="",color="black",fontcolor="black"];
+{rank = same; 7884844815865442736;}
+{rank = same; 5161059930158165280;7755474553779047511;-744434659070444972;}
+{rank = same; 3517885727436864007;6941647630291152506;}
+{rank = same; -7353697264800056943;-3647251740096735142;}
+{rank = same; -9153370303065146825;-3141117090933613572;}
+{rank = same; 6827051445998667140;}
+{rank = same; 525529535153352640;-7403695922459993661;}
+}
+}
