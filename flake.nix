@@ -36,23 +36,8 @@
           shellHook = ''
             export SHELL="${shell}"
 
-            echo "TLA+ development environment"
-            echo "Available tools:"
-            echo "  tlc2     - TLC model checker (CLI)"
-            echo "  tlatex   - TLATeX typesetter"
-            echo "  pcal     - PlusCal translator"
-            echo ""
-            echo "Example usage:"
-            echo "  tlc2 MySpec.tla"
-            echo "  pcal MySpec.tla && tlc2 MySpec.tla"
-
             exec ${shell}
           '';
-        };
-
-        apps.tlc2 = {
-          type = "app";
-          program = "${pkgs.tlaplus}/bin/tlc2";
         };
       });
 }
